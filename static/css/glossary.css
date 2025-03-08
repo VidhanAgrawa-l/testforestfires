@@ -142,6 +142,73 @@ body {
     padding: 0 1rem;
 }
 
+ /* Essential accordion styles */
+ .accordion-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Modal styles */
+.dataset-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dataset-modal.show {
+    opacity: 1;
+}
+
+.dataset-modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.credit-link {
+    color: white; /* Match the text color */
+    font-weight: bold; /* Make it stand out */
+}
+
+.credit-link:hover {
+    color: #f7eab7; /* Change color on hover for effect */
+    text-decoration: none; /* Add underline on hover */
+}
+
 /* Header Animation */
 .header, .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));

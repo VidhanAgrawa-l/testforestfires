@@ -1,26 +1,295 @@
-<html>
-<body>
-    <div class="login">
-       <h1>FWI Prediction</h1>
+<!-- <html> -->
+<!-- <body> -->
+    <!-- <div class="login"> -->
+       <!-- <h1>FWI Prediction</h1> -->
    
         <!-- Main Input For Receiving Query to our ML -->
-       <form action="{{ url_for('predict_datapoint')}}" method="post">
-         <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
-           <input type="text" name="RH" placeholder="RH" required="required" /><br>
-           <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
-           <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
-           <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
-           <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
-           <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
-           <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
-           <input type="text" name="Region" placeholder="Region" required="required" /><br>
+       <!-- <form action="{{ url_for('predict_datapoint')}}" method="post"> -->
+         <!-- <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br> -->
+           <!-- <input type="text" name="RH" placeholder="RH" required="required" /><br> -->
+           <!-- <input type="text" name="Ws" placeholder="Ws" required="required" /><br> -->
+           <!-- <input type="text" name="Rain" placeholder="Rain" required="required" /><br> -->
+           <!-- <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br> -->
+           <!-- <input type="text" name="DMC" placeholder="DMC" required="required" /><br> -->
+           <!-- <input type="text" name="ISI" placeholder="ISI" required="required" /><br> -->
+           <!-- <input type="text" name="Classes" placeholder="Classes" required="required" /><br> -->
+           <!-- <input type="text" name="Region" placeholder="Region" required="required" /><br> -->
    
    
    
-           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-       </form>
-    <h2>
-       THE FWI prediction is {{result}}
-    </h2>
-   <body>
+           <!-- <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> -->
+       <!-- </form> -->
+    <!-- <h2> -->
+       <!-- THE FWI prediction is {{result}} -->
+    <!-- </h2> -->
+   <!-- <body> -->
+
+      <!-- </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prediction</title> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Forest Fire Prediction</h1>
+    </header>
+
+    <div class="container">
+      <h2>Enter Features for Forest Fire Prediction</h2>
+      <form action="/predictdata" method="post">
+          <label for="Temperature">Temperature (°C):</label>
+          <input type="number" step="0.1" name="Temperature" min="22" max="42" required><br>
+  
+          <label for="RH">Relative Humidity (RH) %:</label>
+          <input type="number" step="0.1" name="RH" min="21" max="90" required><br>
+   -->
+          <!-- <label for="Ws">Wind Speed (Ws) km/h:</label>
+          <input type="number" step="0.1" name="Ws" min="6" max="29" required><br>
+  
+          <label for="Rain">Rain (mm):</label>
+          <input type="number" step="0.1" name="Rain" min="0" max="16.8" required><br>
+  
+          <label for="FFMC">FFMC Index:</label>
+          <input type="number" step="0.1" name="FFMC" min="28.6" max="92.5" required><br>
+  
+          <label for="DMC">DMC Index:</label>
+          <input type="number" step="0.1" name="DMC" min="1.1" max="65.9" required><br>
+  
+          <label for="DC">Drought Code (DC) Index:</label>
+          <input type="number" step="0.1" name="DC" min="7" max="220.4" required><br>
+  
+          <label for="ISI">ISI Index:</label>
+          <input type="number" step="0.1" name="ISI" min="0" max="18.5" required><br>
+  
+          <label for="BUI">BUI Index:</label> -->
+          <!-- <input type="number" step="0.1" name="BUI" min="1.1" max="68" required><br> -->
+  
+          <!-- <label for="FWI">FWI Index:</label>
+          <input type="number" step="0.1" name="FWI" min="0" max="31.1" required><br>
+  
+          <label for="Classes">Classes (0: Not Fire, 1: Fire):</label>
+          <select name="Classes" required>
+              <option value="0">Not Fire</option>
+              <option value="1">Fire</option>
+          </select><br>
+  
+          <button type="submit" class="btn">Predict</button> -->
+      <!-- </form>
+  
+      {% if result %}
+      <h3>Predicted Forest Fire Risk: {{ result }}</h3>
+      {% endif %}
+  </div>
+  
+
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #ff5722;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .overview {
+            background-color: rgba(255, 87, 34, 0.9);
+            padding: 15px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            font-size: 16px;
+            text-align: left;
+            box-shadow: 0px 0px 15px rgba(255, 87, 34, 0.7);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .form-container {
+            background: #333;
+            padding: 30px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        select {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            background: #444;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        select:hover {
+            background: #555;
+        }
+
+        .btn {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #e64a19;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">Forest Fire Prediction</div>
+
+    <!-- Overview Section -->
+    <div class="overview">
+        <h2>🔥 Input Feature Ranges 🔥</h2>
+        <p><b>Temperature (°C):</b> 22 - 42</p>
+        <p><b>Relative Humidity (%):</b> 21 - 90</p>
+        <p><b>Wind Speed (km/h):</b> 6 - 29</p>
+        <p><b>Rain (mm):</b> 0 - 16.8</p>
+        <p><b>FFMC Index:</b> 28.6 - 92.5</p>
+        <p><b>DMC Index:</b> 1.1 - 65.9</p>
+        <p><b>DC Index:</b> 7 - 220.4</p>
+        <p><b>ISI Index:</b> 0 - 18.5</p>
+        <p><b>BUI Index:</b> 1.1 - 68</p>
+        <p><b>FWI Index:</b> 0 - 31.1</p>
+        <p><b>Classes:</b> 0 (Not Fire) | 1 (Fire)</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h2>Enter Features for Prediction</h2>
+        <form action="/predictdata" method="post">
+            
+            <label>Temperature (°C):</label>
+            <select name="Temperature">
+                {% for i in range(22, 43) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Relative Humidity (%):</label>
+            <select name="RH">
+                {% for i in range(21, 91) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Wind Speed (km/h):</label>
+            <select name="Ws">
+                {% for i in range(6, 30) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Rain (mm):</label>
+            <select name="Rain">
+                {% for i in range(0, 18) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>FFMC Index:</label>
+            <select name="FFMC">
+                {% for i in range(29, 93) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>DMC Index:</label>
+            <select name="DMC">
+                {% for i in range(1, 67) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>DC Index:</label>
+            <select name="DC">
+                {% for i in range(7, 221) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>ISI Index:</label>
+            <select name="ISI">
+                {% for i in range(0, 19) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>BUI Index:</label>
+            <select name="BUI">
+                {% for i in range(1, 69) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>FWI Index:</label>
+            <select name="FWI">
+                {% for i in range(0, 32) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Fire Class:</label>
+            <select name="Classes">
+                <option value="0">Not Fire</option>
+                <option value="1">Fire</option>
+            </select>
+            
+            <select name="Region">
+               <option value="1">Region 1</option>
+               <option value="2">Region 2</option>
+           </select>
+           
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if result %}
+        <h3>🔥 Predicted Fire Risk: {{ result }} 🔥</h3>
+        {% endif %}
+    </div>
+
+</body>
 </html>

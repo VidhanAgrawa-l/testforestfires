@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Weather Glossary | Forest Fire Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/glossary.css') }}">
+
+     
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🔥 Forest Fire Prediction 🔥</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="back-link"> Back to Home</a>
+
+        <!-- Add this right after your back link -->
+<!-- <div class="container">
+    <a href="{{ url_for('index') }}" class="back-link"> Back to Home</a> -->
+    
+    <!-- Add the dataset button here -->
+    <button id="datasetInfoBtn" class="dataset-btn">View Dataset Information</button>
+    
+    <!-- Add the modal HTML -->
+    <div id="datasetModal" class="dataset-modal">
+        <div class="dataset-modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Algerian Forest Fires Dataset</h2>
+            <div class="dataset-info">
+                <h3>Data Set Information:</h3>
+                <p>The dataset includes 244 instances that regroup data of two regions of Algeria, namely the Bejaia region located in the northeast of Algeria and the Sidi Bel-abbes region located in the northwest of Algeria.</p>
+                <ul>
+                    <li>122 instances for each region.</li>
+                    <li>The period from June 2012 to September 2012.</li>
+                    <li>The dataset includes 11 attributes and 1 output attribute (class).</li>
+                    <li>The 244 instances have been classified into fire (138 classes) and not fire (106 classes) classes.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-header">
+        <!-- Rest of your existing page content -->
+        
+        <div class="page-header">
+            <h1>Fire Weather Indices</h1>
+            <p>Understanding fire risk factors and their measurements</p>
+        </div>
+        
+        <div class="introduction">
+            <p>This glossary provides definitions and explanations of important terms used in fire weather forecasting and risk assessment. Understanding these indices can help in interpreting fire danger ratings and preparing for potential fire hazards.</p>
+        </div>
+
+        <!-- Dataset Modal -->
+        <!-- <div id="datasetModal" class="dataset-modal">
+            <div class="dataset-modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Algerian Forest Fires Dataset</h2>
+                <div class="dataset-info">
+                    <h3>Data Set Information:</h3>
+                    <p>The dataset includes 244 instances that regroup data of two regions of Algeria, namely the Bejaia region located in the northeast of Algeria and the Sidi Bel-abbes region located in the northwest of Algeria.</p>
+                    <ul>
+                        <li>122 instances for each region.</li>
+                        <li>The period from June 2012 to September 2012.</li>
+                        <li>The dataset includes 11 attributes and 1 output attribute (class).</li>
+                        <li>The 244 instances have been classified into fire (138 classes) and not fire (106 classes) classes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+        
+
+        <div class="glossary">
+            <div class="accordion-item">
+                <div class="accordion-header" aria-expanded="false" aria-controls="environmental-content">
+                    <h3>Environmental Factors</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div id="environmental-content" class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>Temperature (°C)</strong> Higher temperatures accelerate fuel drying and increase fire risk potential.</p>
+                        <p><strong>Humidity (%)</strong> Lower relative humidity indicates drier conditions, making vegetation more combustible.</p>
+                        <p><strong>Wind Speed (km/h)</strong> Strong winds increase oxygen supply and rapidly spread fires across landscapes.</p>
+                        <p><strong>Rain (mm)</strong> Precipitation increases fuel moisture content, reducing flammability and fire spread.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" aria-expanded="false" aria-controls="indices-content">
+                    <h3>Fire Weather Indices</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div id="indices-content" class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>FFMC</strong> Fine Fuel Moisture Code - Indicates the dryness of fine surface fuels. Higher values (>90) indicate highly flammable conditions.</p>
+                        <p><strong>DMC</strong> Duff Moisture Code - Measures moisture in moderate-depth organic layers and medium-sized woody debris.</p>
+                        <p><strong>DC</strong> Drought Code - Long-term dryness indicator reflecting deep soil moisture deficits and large log moisture.</p>
+                        <p><strong>ISI</strong> Initial Spread Index - Represents the expected rate of fire spread, combining wind and FFMC effects.</p>
+                        <p><strong>BUI</strong> Buildup Index - Indicates total fuel available for combustion, combining DMC and DC values.</p>
+                        <p><strong>FWI</strong> Fire Weather Index - Overall fire danger rating integrating all indices into a single risk metric.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" aria-expanded="false" aria-controls="interpretation-content">
+                    <h3>Output Interpretation</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div id="interpretation-content" class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>Class 0</strong> <span class="fire-risk fire-risk-low">No Fire</span> Conditions unfavorable for sustained ignition or spread.</p>
+                        <p><strong>Class 1</strong> <span class="fire-risk fire-risk-high">Fire</span> Environmental conditions conducive to fire ignition and propagation.</p>
+                        <p><strong>Region</strong> Fire risk assessment must be contextualized by local climate, vegetation, and seasonal patterns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Forest Fire Prediction | Powered by Machine Learning</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Accordion functionality
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                // Set initial state - all closed
+                const content = header.nextElementSibling;
+                content.style.maxHeight = '0';
+                
+                header.addEventListener('click', () => {
+                    // Toggle the current accordion
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    
+                    // Update aria attributes for accessibility
+                    header.setAttribute('aria-expanded', !isExpanded);
+                    
+                    // Toggle the accordion state
+                    if (!isExpanded) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        header.classList.add('active');
+                    } else {
+                        content.style.maxHeight = '0';
+                        header.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Dataset Modal Functionality
+            const modal = document.getElementById('datasetModal');
+            const btn = document.getElementById('datasetInfoBtn');
+            const span = document.getElementsByClassName('close-btn')[0];
+            
+            // Open modal
+            btn.onclick = function() {
+                modal.style.display = 'block';
+                setTimeout(() => {
+                    modal.classList.add('show');
+                }, 10);
+            }
+            
+            // Close modal with X
+            span.onclick = function() {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            }
+            
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.classList.remove('show');
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 300);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -91,97 +91,21 @@
 </html>
  -->
 
- <!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forest Fire Prediction</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #222;
-            color: white;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        .header {
-            background-color: #ff5722;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .overview {
-            background-color: rgba(255, 87, 34, 0.9);
-            padding: 15px;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 10px;
-            font-size: 16px;
-            text-align: left;
-            box-shadow: 0px 0px 15px rgba(255, 87, 34, 0.7);
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .form-container {
-            background: #333;
-            padding: 30px;
-            margin: 20px auto;
-            width: 60%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-        }
-
-        select {
-            width: 95%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-            background: #444;
-            color: white;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        select:hover {
-            background: #555;
-        }
-
-        .btn {
-            background-color: #ff5722;
-            color: white;
-            padding: 10px 15px;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-            border-radius: 5px;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            background-color: #e64a19;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
 </head>
-<body>
+<body> -->
 
-    <div class="header">Forest Fire Prediction</div>
+    <!-- <div class="header">Forest Fire Prediction</div> -->
 
     <!-- Overview Section -->
-    <div class="overview">
+    <!-- <div class="overview">
         <h2>🔥 Input Feature Ranges 🔥</h2>
         <p><b>Temperature (°C):</b> 22 - 42</p>
         <p><b>Relative Humidity (%):</b> 21 - 90</p>
@@ -194,10 +118,10 @@
         <p><b>BUI Index:</b> 1.1 - 68</p>
         <p><b>FWI Index:</b> 0 - 31.1</p>
         <p><b>Classes:</b> 0 (Not Fire) | 1 (Fire)</p>
-    </div>
+    </div> -->
 
     <!-- Form Section -->
-    <div class="form-container">
+    <!-- <div class="form-container">
         <h2>Enter Features for Prediction</h2>
         <form action="/predictdata" method="post">
             
@@ -227,9 +151,9 @@
                 {% for i in range(0, 18) %}
                     <option value="{{ i }}">{{ i }}</option>
                 {% endfor %}
-            </select>
+            </select> -->
 
-            <label>FFMC Index:</label>
+            <!-- <label>FFMC Index:</label>
             <select name="FFMC">
                 {% for i in range(29, 93) %}
                     <option value="{{ i }}">{{ i }}</option>
@@ -260,8 +184,8 @@
             <label>BUI Index:</label>
             <select name="BUI">
                 {% for i in range(1, 69) %}
-                    <option value="{{ i }}">{{ i }}</option>
-                {% endfor %}
+                    <option value="{{ i }}">{{ i }}</option> -->
+                <!-- {% endfor %}
             </select>
 
             <label>FWI Index:</label>
@@ -276,7 +200,7 @@
                 <option value="0">Not Fire</option>
                 <option value="1">Fire</option>
             </select>
-            
+
             <select name="Region">
                <option value="1">Region 1</option>
                <option value="2">Region 2</option>
@@ -292,4 +216,417 @@
     </div>
 
 </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🔥 Forest Fire Prediction 🔥</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <!-- <div class="overview">
+            <h2>Input Feature Ranges</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="feature-label">Temperature (°C):</span>
+                    <span class="feature-range">22 - 42</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Relative Humidity (%):</span>
+                    <span class="feature-range">21 - 90</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Wind Speed (km/h):</span>
+                    <span class="feature-range">6 - 29</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Rain (mm):</span>
+                    <span class="feature-range">0 - 16.8</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">FFMC Index:</span>
+                    <span class="feature-range">28.6 - 92.5</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">DMC Index:</span>
+                    <span class="feature-range">1.1 - 65.9</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">DC Index:</span>
+                    <span class="feature-range">7 - 220.4</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">ISI Index:</span>
+                    <span class="feature-range">0 - 18.5</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">BUI Index:</span>
+                    <span class="feature-range">1.1 - 68</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">FWI Index:</span>
+                    <span class="feature-range">0 - 31.1</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Classes:</span>
+                    <span class="feature-range">0 (Not Fire) | 1 (Fire)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <!-- <div class="form-container">
+            <h2>Enter Features for Prediction</h2>
+            <form action="/predictdata" method="post">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="temperature">Temperature (°C):</label>
+                        <select id="temperature" name="Temperature">
+                            {% for i in range(22, 43) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rh">Relative Humidity (%):</label>
+                        <select id="rh" name="RH">
+                            {% for i in range(21, 91) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div> -->
+<!-- 
+                    <div class="form-group">
+                        <label for="ws">Wind Speed (km/h):</label>
+                        <select id="ws" name="Ws">
+                            {% for i in range(6, 30) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rain">Rain (mm):</label>
+                        <select id="rain" name="Rain">
+                            {% for i in range(0, 18) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div> -->
+<!-- 
+                    <div class="form-group">
+                        <label for="ffmc">FFMC Index:</label>
+                        <select id="ffmc" name="FFMC">
+                            {% for i in range(29, 93) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dmc">DMC Index:</label>
+                        <select id="dmc" name="DMC">
+                            {% for i in range(1, 67) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div> -->
+
+                    <!-- <div class="form-group">
+                        <label for="dc">DC Index:</label>
+                        <select id="dc" name="DC">
+                            {% for i in range(7, 221) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isi">ISI Index:</label>
+                        <select id="isi" name="ISI">
+                            {% for i in range(0, 19) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bui">BUI Index:</label>
+                        <select id="bui" name="BUI">
+                            {% for i in range(1, 69) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fwi">FWI Index:</label>
+                        <select id="fwi" name="FWI">
+                            {% for i in range(0, 32) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="classes">Fire Class:</label>
+                        <select id="classes" name="Classes">
+                            <option value="0">Not Fire</option>
+                            <option value="1">Fire</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region">Region:</label>
+                        <select id="region" name="Region">
+                            <option value="1">Region 1</option>
+                            <option value="2">Region 2</option>
+                        </select>
+                    </div>
+                </div> -->
+<!-- 
+                <button type="submit" class="btn">Predict Fire Risk</button>
+            </form>
+
+            {% if result %}
+            <div class="result-container">
+                <h3>Predicted Fire Risk: <span class="result-value">{{ result }} %</span></h3>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html> --> --> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🔥 Forest Fire Prediction 🔥</h1>
+            <!-- Move the glossary link here, in the header -->
+            <nav class="main-nav">
+                <a href="{{ url_for('glossary') }}" class="glossary-link">Fire Weather Glossary</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Project Overview Section -->
+        <div class="project-overview">
+            <h2>Project Overview</h2>
+            <p>This application uses machine learning to predict the likelihood of forest fires based on environmental factors and fire indices. By analyzing temperature, humidity, wind conditions and specialized fire weather indices, our model can help forecast potential fire risks to assist in prevention and resource management.</p>
+        </div>
+
+        <!-- Input Features Section -->
+        <div class="overview">
+            <h2>Input Feature Ranges</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="feature-label">Temperature (°C):</span>
+                    <span class="feature-range">22 - 42</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Relative Humidity (%):</span>
+                    <span class="feature-range">21 - 90</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Wind Speed (km/h):</span>
+                    <span class="feature-range">6 - 29</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Rain (mm):</span>
+                    <span class="feature-range">0 - 16.8</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">FFMC Index:</span>
+                    <span class="feature-range">28.6 - 92.5</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">DMC Index:</span>
+                    <span class="feature-range">1.1 - 65.9</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">DC Index:</span>
+                    <span class="feature-range">7 - 220.4</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">ISI Index:</span>
+                    <span class="feature-range">0 - 18.5</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">BUI Index:</span>
+                    <span class="feature-range">1.1 - 68</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">FWI Index:</span>
+                    <span class="feature-range">0 - 31.1</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">Classes:</span>
+                    <span class="feature-range">0 (Not Fire) | 1 (Fire)</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Form Section -->
+        <div class="form-container">
+            <h2>Enter Features for Prediction</h2>
+            <form action="/predictdata" method="post">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="temperature">Temperature (°C):</label>
+                        <select id="temperature" name="Temperature">
+                            {% for i in range(22, 43) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rh">Relative Humidity (%):</label>
+                        <select id="rh" name="RH">
+                            {% for i in range(21, 91) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ws">Wind Speed (km/h):</label>
+                        <select id="ws" name="Ws">
+                            {% for i in range(6, 30) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rain">Rain (mm):</label>
+                        <select id="rain" name="Rain">
+                            {% for i in range(0, 18) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ffmc">FFMC Index:</label>
+                        <select id="ffmc" name="FFMC">
+                            {% for i in range(29, 93) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dmc">DMC Index:</label>
+                        <select id="dmc" name="DMC">
+                            {% for i in range(1, 67) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dc">DC Index:</label>
+                        <select id="dc" name="DC">
+                            {% for i in range(7, 221) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isi">ISI Index:</label>
+                        <select id="isi" name="ISI">
+                            {% for i in range(0, 19) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bui">BUI Index:</label>
+                        <select id="bui" name="BUI">
+                            {% for i in range(1, 69) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fwi">FWI Index:</label>
+                        <select id="fwi" name="FWI">
+                            {% for i in range(0, 32) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="classes">Fire Class:</label>
+                        <select id="classes" name="Classes">
+                            <option value="0">Not Fire</option>
+                            <option value="1">Fire</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region">Region:</label>
+                        <select id="region" name="Region">
+                            <option value="1">Region 1</option>
+                            <option value="2">Region 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Predict Fire Risk</button>
+            </form>
+
+            {% if result %}
+            <div class="result-container">
+                <h3>Predicted Fire Risk: <span class="result-value">{{ result }}</span></h3>
+                <p class="result-explanation">
+                    {% if result == 'Fire' %}
+                    The environmental conditions you've entered indicate a high likelihood of forest fire occurrence. Consider these conditions dangerous for fire ignition and spread.
+                    {% else %}
+                    The environmental conditions you've entered indicate a low likelihood of forest fire occurrence. These conditions are generally not conducive to fire ignition or spread.
+                    {% endif %}
+                </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Forest Fire Prediction | Powered by Machine Learning</p>
+        </div>
+    </footer>
+</body>
 </html>
+
+   

@@ -1,0 +1,594 @@
+/* 
+:root {
+    --primary-color: #e25822;
+    --secondary-color: #f9a03f;
+    --dark-color: #024d30 ;
+    --light-color:  #6af347 ;
+    --success-color: #28a745;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #273e06f1;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.page-header p {
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.glossary {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: white;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.accordion-header:hover {
+    background-color: #f5f5f5;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: white;
+}
+
+.accordion-content-inner {
+    padding: 0 1.2rem 1.2rem;
+    color: #000;
+}
+
+.accordion-content p {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: baseline;
+}
+
+.accordion-content strong {
+    color: var(--primary-color);
+    min-width: 120px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.active .accordion-icon {
+    transform: rotate(45deg);
+    background-color: var(--dark-color);
+}
+
+.fire-risk {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    color: white;
+} */
+/* 
+.fire-risk-low {
+    background-color: #28a745;
+}
+
+.fire-risk-high {
+    background-color: #dc3545;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--dark-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    background-color: var(--primary-color);
+}
+
+.introduction {
+    background-color: white;
+    color: var(--dark-color);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+} */
+
+/* Add these styles for the missing elements */
+/* .header {
+    background: linear-gradient(135deg, #6af347 0%, #024d30 100%);
+    padding: 25px 0;
+    color: white;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    text-align: center;
+  } */
+
+/* .footer { */
+    /* background-color: var(--dark-color); */
+    /* background: linear-gradient(135deg, #6af347 0%, #024d30 100%);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+} */
+
+
+/* Responsive adjustments
+@media (max-width: 600px) {
+    .accordion-content strong {
+        min-width: auto;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+    
+    .accordion-content p {
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+} */
+
+:root {
+    --primary-color: #e25822;
+    --secondary-color: #f9a03f;
+    --dark-color: #024d30;
+    --light-color: #6af347;
+    --success-color: #28a745;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --animation-duration: 0.8s;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #273e06f1;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.1s;
+}
+
+/* dataset walal kaaam */
+/* Add these styles to your CSS file */
+
+.dataset-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.dataset-btn:hover {
+    background-color: var(--dark-color);
+}
+
+/* Modal Styles */
+.dataset-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dataset-modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: #000;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.dataset-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.dataset-info ul {
+    padding-left: 20px;
+}
+
+.dataset-info li {
+    margin-bottom: 8px;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Header Animation */
+.header, .page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    animation: slideInLeft var(--animation-duration) ease forwards;
+    animation-delay: 0.2s;
+}
+
+.header {
+    background: linear-gradient(135deg, #6af347 0%, #024d30 100%);
+    padding: 25px 0;
+    color: white;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    animation-delay: 0.1s;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    opacity: 0;
+    animation: slideUp var(--animation-duration) ease forwards;
+    animation-delay: 0.4s;
+}
+
+.page-header p {
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: slideUp var(--animation-duration) ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Introduction Animation */
+.introduction {
+    background-color: white;
+    color: var(--dark-color);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    animation: scaleIn var(--animation-duration) ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* Glossary & Accordion Animation */
+.glossary {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp var(--animation-duration) ease forwards;
+    animation-delay: 0.7s;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+    opacity: 0;
+    animation: fadeIn var(--animation-duration) ease forwards;
+}
+
+/* Staggered delay for accordion items */
+.accordion-item:nth-child(1) { animation-delay: 0.8s; }
+.accordion-item:nth-child(2) { animation-delay: 0.9s; }
+.accordion-item:nth-child(3) { animation-delay: 1.0s; }
+.accordion-item:nth-child(4) { animation-delay: 1.1s; }
+.accordion-item:nth-child(5) { animation-delay: 1.2s; }
+.accordion-item:nth-child(6) { animation-delay: 1.3s; }
+.accordion-item:nth-child(7) { animation-delay: 1.4s; }
+.accordion-item:nth-child(8) { animation-delay: 1.5s; }
+/* Add more if needed */
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: white;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.accordion-header:hover {
+    background-color: #f5f5f5;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+/* Accordion Icons Animation */
+.accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    transition: var(--transition);
+    transform: rotate(0deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: white;
+}
+
+.accordion-content-inner {
+    padding: 0 1.2rem 1.2rem;
+    color: #000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.accordion-content p {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: baseline;
+}
+
+.accordion-content strong {
+    color: var(--primary-color);
+    min-width: 120px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Active Accordion Item Animation */
+.active .accordion-icon {
+    transform: rotate(45deg);
+    background-color: var(--dark-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fire-risk {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.fire-risk-low {
+    background-color: #28a745;
+}
+
+.fire-risk-high {
+    background-color: #dc3545;
+}
+
+/* Back Link Animation */
+.back-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--dark-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+    opacity: 0;
+    animation: fadeIn var(--animation-duration) ease forwards;
+    animation-delay: 0.6s;
+}
+
+.back-link:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Animation */
+.footer {
+    background: linear-gradient(135deg, #6af347 0%, #024d30 100%);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: slideUp var(--animation-duration) ease forwards;
+    animation-delay: 1.6s;
+}
+
+/* Animation for accordion opening */
+.accordion-content.active {
+    animation: expandContent 0.5s ease-out forwards;
+}
+
+@keyframes expandContent {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 500px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .accordion-content strong {
+        min-width: auto;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+    
+    .accordion-content p {
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Adjust animation delays for mobile */
+    .accordion-item:nth-child(n) {
+        animation-delay: calc(0.5s + 0.1s * var(--n));
+    }
+}

@@ -1,3 +1,5 @@
+<!-- 🔥PROTOTYPE NO. 1🔥 -->
+
 <!-- <html> -->
 <!-- <body> -->
     <!-- <div class="login"> -->
@@ -91,6 +93,11 @@
 </html>
  -->
 
+
+
+
+ <!-- 🔥PROTOTYPE NO. 2🔥 -->
+
  <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,7 +113,7 @@
 
     <!-- Overview Section -->
     <!-- <div class="overview">
-        <h2>🔥 Input Feature Ranges 🔥</h2>
+        <h2> Input Feature Ranges </h2>
         <p><b>Temperature (°C):</b> 22 - 42</p>
         <p><b>Relative Humidity (%):</b> 21 - 90</p>
         <p><b>Wind Speed (km/h):</b> 6 - 29</p>
@@ -211,12 +218,16 @@
         </form>
 
         {% if result %}
-        <h3>🔥 Predicted Fire Risk: {{ result }} 🔥</h3>
+        <h3> Predicted Fire Risk: {{ result }} </h3>
         {% endif %}
     </div>
 
 </body>
 </html> -->
+
+
+<!-- 🔥PROTOTYPE NO. 3🔥 -->
+
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -230,7 +241,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1>🔥 Forest Fire Prediction 🔥</h1>
+            <h1> Forest Fire Prediction </h1>
         </div>
     </header>
 
@@ -409,7 +420,11 @@
         </div>
     </div>
 </body>
-</html> --> --> -->
+</html> --> 
+<a href="#" style="float: right;">Vidhan Agrawal</a>
+
+<!-- 🔥PROTOTYPE NO. 4 (FINAL)🔥 -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -425,9 +440,21 @@
     <header class="header">
         <div class="container">
             <h1>🔥 Forest Fire Prediction 🔥</h1>
-            <!-- Move the glossary link here, in the header -->
+            <!-- Navigation with all links in one nav element -->
             <nav class="main-nav">
-                <a href="{{ url_for('glossary') }}" class="glossary-link">Fire Weather Glossary</a>
+
+                <a href="https://www.linkedin.com/in/vidhan-agrawal-7133242a2/" target="_blank" class="nav-link social-link linkedin-link">
+                    <span class="social-icon">in</span> LinkedIn Profile
+                </a>
+                <a href="{{ url_for('glossary') }}" class="nav-link glossary-link">📖 Fire Weather Glossary</a>
+                <a href="https://github.com/VidhanAgrawa-l" target="_blank" class="nav-link social-link github-link">
+                    <span class="social-icon">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </span> 
+                    GitHub Profile
+                </a>
             </nav>
         </div>
     </header>
@@ -623,9 +650,25 @@
     </div>
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Forest Fire Prediction | Powered by Machine Learning</p>
+            <p>© 2025 Forest Fire Prediction | Powered by Machine Learning | Developed by 
+                <a href="https://github.com/VidhanAgrawa-l" target="_blank" class="credit-link">Vidhan Agrawal</a>
+            </p>
         </div>
     </footer>
+    
+    <style>
+        .credit-link {
+            color: white; /* Match the text color */
+            font-weight: bold; /* Make it stand out */
+        }
+        
+        .credit-link:hover {
+            color: #f7eab7; /* Change color on hover for effect */
+            text-decoration: none; /* Add underline on hover */
+        }
+    </style>
+    
+    
 </body>
 </html>
 

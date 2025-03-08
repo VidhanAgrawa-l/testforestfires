@@ -19,10 +19,6 @@
     
     <div class="container">
         <a href="{{ url_for('index') }}" class="back-link"> Back to Home</a>
-
-        <!-- Add this right after your back link -->
-<!-- <div class="container">
-    <a href="{{ url_for('index') }}" class="back-link"> Back to Home</a> -->
     
     <!-- Add the dataset button here -->
     <button id="datasetInfoBtn" class="dataset-btn">View Dataset Information</button>
@@ -127,9 +123,22 @@
 
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Forest Fire Prediction | Powered by Machine Learning</p>
+            <p>© 2025 Forest Fire Prediction | Powered by Machine Learning | Developed by 
+                <a href="https://github.com/VidhanAgrawa-l" target="_blank" class="credit-link">Vidhan Agrawal</a>
+            </p>
         </div>
     </footer>
+    
+    <style>
+        .credit-link {
+            color: white; /* Match the text color */
+            font-weight: bold; /* Make it stand out */
+        }
+        
+        .credit-link:hover {
+            color: #f7eab7; /* Change color on hover for effect */
+            text-decoration: none; /* Add underline on hover */
+        }
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
